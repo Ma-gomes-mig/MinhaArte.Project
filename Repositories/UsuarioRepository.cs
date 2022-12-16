@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MinhaArte.Models;
 using MinhaArte.Project.Data;
+using MinhaArte.Project.Repositories.Interface;
 using System;
 
 namespace MinhaArte.Project.Repositories
 {
-    public class UsuarioRepository
+    public class UsuarioRepository : IUsuarioRepository
     {
         private readonly ApplicationDbContext _context;
         public UsuarioRepository(ApplicationDbContext contexto)

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MinhaArte.Project.Data;
+using MinhaArte.Project.Repositories;
 using MinhaArte.Project.Repositories.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,14 +11,14 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddTransient<IQuadroRepository, QuadroRepository>();
+builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddTransient<IUsuarioRepository, IUsuarioRepository>();
-builder.Services.AddTransient<IQuadroRepository, IQuadroRepository>();
-builder.Services.AddTransient<ICategoriaRepository, ICategoriaRepository>();
 
 var app = builder.Build();
 

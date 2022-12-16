@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MinhaArte.Models;
 using MinhaArte.Project.Data;
+using MinhaArte.Project.Repositories.Interface;
 using System;
 
 namespace MinhaArte.Project.Repositories
 {
-    public class QuadroRepository
+    public class QuadroRepository : IQuadroRepository
     {
         private readonly ApplicationDbContext _context;
         public QuadroRepository(ApplicationDbContext context)

@@ -1,4 +1,5 @@
 ﻿using MinhaArte.Models;
+using MinhaArte.Project.Repositories;
 using System.Collections.Generic;
 
 namespace MinhaArte.Project.Repositories.Interface
