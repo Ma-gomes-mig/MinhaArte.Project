@@ -1,113 +1,14 @@
 ﻿@model IEnumerable<MinhaArte.Models.QuadroModel>
 
-@{
-    ViewData["Title"] = "List";
-}
+    <div>
+        <h2>Lista de todos os lanches</h2>
+    </div>
 
-<h1>List</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.QuadroId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QuadroNome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataCriacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Preco)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DescricaoCurta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagemUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagemThumbnailUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pintor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Material)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsPreferido)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Disponivel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoriaId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioId)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuadroId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuadroNome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataCriacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Preco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescricaoCurta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagemUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImagemThumbnailUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pintor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Material)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsPreferido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Disponivel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoriaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioId)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.QuadroId }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.QuadroId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.QuadroId })
-            </td>
-        </tr>
+@foreach(var lanche in Model)
+{
+    <div>
+        <h4>@lanche.QuadroNome</h4>
+        <p><img class="@lanche.ImagemUrl" /></p>
+        <h3>Preço : @lanche.Preco.ToString("c")</h3>
+    </div>
 }
-    </tbody>
-</table>

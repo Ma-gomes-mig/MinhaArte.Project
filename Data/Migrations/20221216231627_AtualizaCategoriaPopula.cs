@@ -5,16 +5,13 @@
 namespace MinhaArte.Project.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class PopulaCategoria : Migration
+    public partial class AtualizaCategoriaPopula : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql("INSERT INTO Categoria(CategoriaNome, CategoriaDescricao) " +
-                            "VALUES('Pintura à Oleo', 'Pintura usando tinta à oleo.')");
-
-            migrationBuilder.Sql("INSERT INTO Categoria(CategoriaNome, CategoriaDescricao) " +
-                "VALUES('Aquarela', 'A pintura de aquarela geralmente é feita no papel.')");
+               "VALUES('Aquarela', 'A pintura de aquarela geralmente é feita no papel.')");
 
             migrationBuilder.Sql("INSERT INTO Categoria(CategoriaNome, CategoriaDescricao) " +
                 "VALUES('Pintura à Têmpera', 'Têmpera é um meio de pintura permanente e de secagem rápida')");
@@ -22,7 +19,7 @@ namespace MinhaArte.Project.Data.Migrations
             migrationBuilder.Sql("INSERT INTO Categoria(CategoriaNome, CategoriaDescricao) " +
                 "VALUES('Pintura Acrilica', 'Estas são pinturas solúveis em água, torna-se resistente à água')");
 
-            
+
         }
 
         /// <inheritdoc />
