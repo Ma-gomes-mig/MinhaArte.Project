@@ -15,6 +15,10 @@ namespace MinhaArte.Project.Controllers
         public IActionResult List()
         {
             var quadro = _quadroRepository.Quadro;
+            var TotalQuadro = quadro.Count();
+
+            ViewBag.Total = "O total de quadros é: ";
+            ViewBag.TotalQuadro = TotalQuadro;
             return View(quadro);
         }
     }
